@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500&display=swap');
+body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+html, body {
+  height: 100%;
+  min-height: 100vh;
+}
+.grid{
+  display: grid;
+  grid-template-columns: 30vw 30vw 30vw;
+}
+.box{
+    height: 27vh;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(126, 207, 255, 0.25);
+    
+font-weight: 1000;
+letter-spacing: 0.25em;
+
+text-transform: uppercase;
+text-shadow:
+  0 0 20px rgba(100, 180, 255, 0.8),
+  0 0 40px rgba(60, 130, 220, 0.4),
+  0 2px 4px rgba(0,0,0,0.8);
+    margin-left: 15%;
+    margin-top: 5%;
+    padding-left: 15%;
+    padding-top: 9%;
+color: #d5e2f3;
+    background-image: url(/search.jpg);
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+filter:opacity(0.9) ;
+  font-size:large;
+  border-radius: 20%;
+
+  
+
+    
+}
+.box:hover{
+    filter:opacity(1)
+
+}
+.nav{
+    font-family: 'Cinzel', serif;
+    color: rgba(200, 230, 255, 0.75);
+    border-radius: 5%;
+}
+.navlink{
+    font-family: 'Cinzel', serif;
+  font-size: 13px;
+  letter-spacing: 0.25em;
+  color: rgba(200, 230, 255, 0.75);
+  text-decoration: none;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.navlink:hover {
+  color: #74bae3;
+}
+@media (max-width: 414px) {
+  .grid {
+    grid-template-columns: 1fr ;
+    width: 100% ;
+    max-width: 100% ;
+    gap: 5%;
+    padding: 3%;
+  }
+  
+}
+.bg{
+  background-image:url(/spacebackground.jpg) ;
+  background-position:center ;
+  background-repeat: repeat;
+  background-size: cover;
+    min-height: 100vh;
+         
+}
