@@ -17,11 +17,47 @@ export default function Page() {
     "/img.jpg",
   ]
   const [index, setIndex] = useState(null)
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
+    
     <body style={{ backgroundImage: 'URL("/spacebackground.jpg")',zIndex:"1"}}>
-      <nav  className="nav" style={{backgroundColor:"rgba(255,255,255,0.08)", width:"100%",height:"10%" ,display:"flex",alignItems:"center", justifyContent:"center",gap:"10%", marginBottom:"7%", color:"white",borderBottom:"1px solid rgba(126, 207, 255, 0.2)"}}><a className="navlink">HOME</a><Link href="/" className="navlink">Gallery</Link> <a className="navlink">CONTACT</a></nav>
+    
 
+<nav className="nav" style={{
+          backgroundColor: "rgba(255,255,255,0.08)",marginLeft:"3%",
+          width: "90%", height: "10%", display: "flex",
+          alignItems: "center", justifyContent: "center",gap:"10%",
+          padding: "0 20px", marginBottom: "7%", color: "white",
+          borderBottom: "1px solid rgba(126, 207, 255, 0.2)",
+          position: "relative"
+        }}>
+          {/* Desktop links */}
+          <div className="navlinks-desktop">
+            <a className="navlink">HOME</a>
+            <a  href="/"className="navlink">GALLERY</a>
+            <a className="navlink">CONTACT</a>
+          </div>
+
+          {/* Hamburger button */}
+          <button className={`hamburger ${menuOpen ? 'open' : ''}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          {/* Mobile dropdown */}
+          {menuOpen && (
+            <div className="mobile-menu">
+              <a className="navlink">HOME</a>
+              <a href="/" className="navlink">GALLERY</a>
+              <a className="navlink">CONTACT</a>
+            </div>
+          )}
+        </nav>
+            
       <div className="gallery">
         {images.map((img, i) => (
           <img key={i} src={img} onClick={() => setIndex(i)} />
